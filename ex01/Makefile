@@ -5,7 +5,7 @@ CXX = c++
 
 CXX_FLAGS = -Wall -Wextra -Werror -std=c++98  
 
-SRCS = *.cpp
+SRCS = phonebook.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
