@@ -3,7 +3,7 @@ NAME = phonebook
 
 CXX = c++
 
-CXX_FLAGS = -Wall -Wextra -Werror -std=c++98  
+CXX_FLAGS = -Wall -Wextra -Werror -std=c++17  
 
 SRCS = phonebook.cpp
 
