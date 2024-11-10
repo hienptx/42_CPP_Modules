@@ -12,8 +12,8 @@
 
 #include "PhoneBook.hpp"
 
-void print_contact(Contact *person, int idx)
-{
+void print_contact(Contact *person, int idx) {
+
     std::cout << "first_name: " << person[idx].first_name << std::endl;
     std::cout << "last_name: " << person[idx].last_name << std::endl;
     std::cout << "nick_name: " << person[idx].nick_name << std::endl;
@@ -21,8 +21,8 @@ void print_contact(Contact *person, int idx)
     std::cout << "darkest_secret: " << person[idx].darkest_secret << std::endl;
 }
 
-void format_output(std::string str)
-{
+void format_output(std::string str) {
+
     if (str.length() > 10)
     {
         std::cout.width(9); std::cout << std::right << str.substr(0, 8) << ".";
@@ -33,8 +33,8 @@ void format_output(std::string str)
     }
 }
 
-void print_search(Contact *person, size_t idx)
-{
+void print_search(Contact *person, size_t idx) {
+
     size_t i = 0;
     std::string input;
     int valid;
@@ -54,8 +54,8 @@ void print_search(Contact *person, size_t idx)
         print_contact(person, valid - 1);
 }
 
-int	main(void)
-{
+int	main(void) {
+    
     PhoneBook phonebook;
     size_t index = 0;
 

@@ -1,7 +1,7 @@
 #include "PhoneBook.hpp"
 
-bool is_empty_string(std::string str)
-{
+bool is_empty_string(std::string str) {
+
     if(str.empty())
         return (true);
     for(char c : str)
@@ -12,8 +12,8 @@ bool is_empty_string(std::string str)
     return (true);
 }
 
-std::string	get_darkest_secret(void)
-{
+std::string	get_darkest_secret(void) {
+
     std::string darkest_secret;
     std::cout << "darkest_secret: ";
     std::getline(std::cin, darkest_secret);
@@ -22,8 +22,8 @@ std::string	get_darkest_secret(void)
     return (darkest_secret);
 }
 
-std::string	get_phone_number(void)
-{
+std::string	get_phone_number(void) {
+
     int	valid;
 
     std::string phone_number;
@@ -47,8 +47,8 @@ std::string	get_phone_number(void)
     return (phone_number);
 }
 
-std::string	get_nick_name(void)
-{
+std::string	get_nick_name(void) {
+
 	std::string nick_name;
 	std::cout << "nick_name: ";
 	std::getline(std::cin, nick_name);
@@ -57,8 +57,8 @@ std::string	get_nick_name(void)
     return (nick_name);
 }
 
-std::string	get_last_name(void)
-{
+std::string	get_last_name(void) {
+
     std::string last_name;
     std::cout << "last_name: ";
     std::getline(std::cin, last_name);
@@ -67,8 +67,8 @@ std::string	get_last_name(void)
     return (last_name);
 }
 
-std::string	get_first_name(void)
-{
+std::string	get_first_name(void) {
+
     std::string first_name;
     std::cout << "first_name: ";
     std::getline(std::cin, first_name);
@@ -77,8 +77,8 @@ std::string	get_first_name(void)
     return (first_name);
 }
 
-void PhoneBook::setContact(size_t idx)
-{    
+void PhoneBook::setContact(size_t idx) {
+
     if (idx == 8)
         idx = 0;
     person[idx].first_name = get_first_name();
@@ -89,7 +89,7 @@ void PhoneBook::setContact(size_t idx)
 
 }
 
-Contact *PhoneBook::getContact()
-{
+Contact *PhoneBook::getContact() {
+    
     return (person);
 }
