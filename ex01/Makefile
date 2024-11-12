@@ -15,15 +15,16 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@echo "Creating $(NAME) ..."
-	$(CXX) $(CXX_FLAGS) $(OBJS) -o $@
+	@$(CXX) $(CXX_FLAGS) $(OBJS) -o $@
 
 %.o: %.cpp
-	$(CXX) $(CXX_FLAGS) -c $< -o $@
+	@$(CXX) $(CXX_FLAGS) -c $< -o $@
 
 clean:
-	-rm -f $(OBJS)
+	@echo "Cleaning up..."
+	@-rm -f $(OBJS)
 
 fclean: clean
-	-rm -f $(NAME)
+	@-rm -f $(NAME)
 
 re: fclean all

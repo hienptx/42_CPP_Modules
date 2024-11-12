@@ -2,7 +2,7 @@ NAME = account
 
 CXX = c++
 
-CXX_FLAGS = -Wall -Wextra -Werror -std=c++17  
+CXX_FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = Account.cpp tests.cpp
 
@@ -14,15 +14,16 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@echo "Creating $(NAME) ..."
-	$(CXX) $(CXX_FLAGS) $(OBJS) -o $@
+	@$(CXX) $(CXX_FLAGS) $(OBJS) -o $@
 
 %.o: %.cpp
-	$(CXX) $(CXX_FLAGS) -c $< -o $@
+	@$(CXX) $(CXX_FLAGS) -c $< -o $@
 
 clean:
-	-rm -f $(OBJS)
+	@echo "Cleaning up..."
+	@-rm -f $(OBJS)
 
 fclean: clean
-	-rm -f $(NAME)
+	@-rm -f $(NAME)
 
 re: fclean all

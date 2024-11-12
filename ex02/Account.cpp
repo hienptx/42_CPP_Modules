@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/12 19:16:25 by hipham            #+#    #+#             */
+/*   Updated: 2024/11/12 19:19:11 by hipham           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Account.hpp"
 #include <iostream>
 #include <ctime>
@@ -11,8 +23,8 @@ int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
 // Constructor
-Account::Account(int initial_deposit) 
-: _accountIndex(_nbAccounts), _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0) 
+Account::Account(int initial_deposit)
+    : _accountIndex(_nbAccounts), _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0)
 {
     _nbAccounts++;
     _totalAmount += _amount;
@@ -21,13 +33,15 @@ Account::Account(int initial_deposit)
 }
 
 // Deconstructor
-Account::~Account(void) {
+Account::~Account(void)
+{
     _displayTimestamp();
     std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";closed" << std::endl;
 }
 
 // Get timestamp
-void Account::_displayTimestamp(void) {
+void Account::_displayTimestamp(void)
+{
     std::time_t curr = std::time(nullptr);
     char cstr[128];
     std::strftime(cstr, sizeof(cstr), "%Y%m%d_%H%M%S", std::gmtime(&curr));
@@ -35,7 +49,8 @@ void Account::_displayTimestamp(void) {
 }
 
 // Display overall Infos of all accounts
-void Account::displayAccountsInfos(void) {
+void Account::displayAccountsInfos(void)
+{
     _displayTimestamp();
     std::cout << "accounts:" << _nbAccounts
               << ";total:" << _totalAmount
@@ -44,7 +59,8 @@ void Account::displayAccountsInfos(void) {
 }
 
 // Display deposit Infos
-void Account::makeDeposit(int deposit) {
+void Account::makeDeposit(int deposit)
+{
     _displayTimestamp();
     std::cout << "index:" << _accountIndex
               << ";p_amount:" << _amount
@@ -57,9 +73,11 @@ void Account::makeDeposit(int deposit) {
 }
 
 // Display Withdrawals Infos
-bool Account::makeWithdrawal(int withdrawal) {
+bool Account::makeWithdrawal(int withdrawal)
+{
     _displayTimestamp();
-    if (_amount >= withdrawal) {
+    if (_amount >= withdrawal)
+    {
         std::cout << "index:" << _accountIndex
                   << ";p_amount:" << _amount
                   << ";withdrawal:" << withdrawal
@@ -69,7 +87,9 @@ bool Account::makeWithdrawal(int withdrawal) {
         _totalAmount -= withdrawal;
         _totalNbWithdrawals++;
         return true;
-    } else {
+    }
+    else
+    {
         std::cout << "index:" << _accountIndex
                   << ";p_amount:" << _amount
                   << ";withdrawal:refused" << std::endl;
@@ -78,7 +98,8 @@ bool Account::makeWithdrawal(int withdrawal) {
 }
 
 // Dispaly Infos after transactions
-void Account::displayStatus(void) const {
+void Account::displayStatus(void) const
+{
     _displayTimestamp();
     std::cout << "index:" << _accountIndex
               << ";amount:" << _amount
