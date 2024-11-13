@@ -14,13 +14,13 @@
 
 Zombie::Zombie(std::string n) //constructor
 {
+    std::cout << "Zombie constructed" << std::endl;
     name = n;
-    std::cout << name << " constructed" << std::endl;
 }
 
 Zombie::~Zombie()
 {
-    std::cout << name << " deconstructed" << std::endl;
+    std::cout << "Zombie deconstructed" << std::endl;
 }
 
 void Zombie::announce(void) //member function
