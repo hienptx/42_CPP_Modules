@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 16:38:53 by hipham            #+#    #+#             */
-/*   Updated: 2024/11/14 16:38:55 by hipham           ###   ########.fr       */
+/*   Created: 2024/11/14 16:42:48 by hipham            #+#    #+#             */
+/*   Updated: 2024/11/14 17:45:16 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#ifndef WEAPON_H
+#define WEAPON_H
 
 #include <iostream>
 #include <string>
 
-class Zombie                // Class declaration
+class Weapon
 {
-    private:                // Accesss specifier
-        std::string name;   // Attribute
-
+    private:
+        std::string type;
     public:
-        Zombie();  //constructor
-        void set_name(std::string n)
+        Weapon(std::string type);
+        std::string getType()
         {
-            name = n;
+            const std::string &typeREF = type;
+            return(typeREF);
         }
-        void announce(void);   //member function
-        ~Zombie();              //deconstructor
+        void setType(std::string *newType)
+        {
+            newType = &type;
+        }
 };
 
-Zombie* zombieHorde(int N, std::string name);
+Weapon::Weapon(std::string type)
+{
+    
+}
 
 #endif

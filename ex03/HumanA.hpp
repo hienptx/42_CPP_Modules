@@ -1,36 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 16:38:53 by hipham            #+#    #+#             */
-/*   Updated: 2024/11/14 16:38:55 by hipham           ###   ########.fr       */
+/*   Created: 2024/11/14 16:42:29 by hipham            #+#    #+#             */
+/*   Updated: 2024/11/14 17:13:45 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#ifndef HUMAN_H
+#define HUMAN_H
 
 #include <iostream>
 #include <string>
+#include "Weapon.hpp"
 
-class Zombie                // Class declaration
+class HumanA
 {
-    private:                // Accesss specifier
-        std::string name;   // Attribute
-
     public:
-        Zombie();  //constructor
-        void set_name(std::string n)
+        std::string name;
+        std::string Weapon;
+        HumanA()
         {
-            name = n;
+
         }
-        void announce(void);   //member function
-        ~Zombie();              //deconstructor
+        void attack()
+        {
+            std::cout << name << "attacks with their"  << Weapon << std::endl;
+        }
 };
 
-Zombie* zombieHorde(int N, std::string name);
+class HumanB
+{
+    public:
+        std::string name;
+        std::string Weapon;
+        HumanB(){};
+        void attack()
+        {
+            std::cout << name << "attacks with their"  << Weapon << std::endl;
+        }
+};
 
 #endif
