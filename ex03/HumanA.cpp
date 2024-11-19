@@ -10,3 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "HumanA.hpp"
+#include "Weapon.hpp"
+
+HumanA::HumanA(std::string name, Weapon& weapon):_Aname(name), _Aweapon(weapon)
+{
+    std::cout << "HumanA constructed" << std::endl;
+}
+
+void HumanA::attack()
+{
+    std::cout   << _Aname << " attacks with their "
+                << _Aweapon.getType() << std::endl;
+}
+
+HumanA::~HumanA()
+{
+    std::cout << "HumanA deconstructed" << std::endl;
+}

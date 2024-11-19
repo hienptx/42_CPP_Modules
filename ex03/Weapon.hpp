@@ -19,23 +19,13 @@
 class Weapon
 {
     private:
-        std::string type;
+        std::string _type;
+
     public:
         Weapon(std::string type);
-        std::string getType()
-        {
-            const std::string &typeREF = type;
-            return(typeREF);
-        }
-        void setType(std::string *newType)
-        {
-            newType = &type;
-        }
+        void setType(std::string newType);
+        std::string getType();
+        ~Weapon();
 };
-
-Weapon::Weapon(std::string type)
-{
-    
-}
 
 #endif

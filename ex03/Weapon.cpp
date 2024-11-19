@@ -10,3 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Weapon.hpp"
+
+Weapon::Weapon(std::string type): _type(type)
+{
+    std::cout << "Weapon constructed" << std::endl;
+}
+
+void Weapon::setType(std::string newType)
+{
+    _type = newType;
+}
+
+std::string Weapon::getType()
+{
+    const std::string &typeREF = _type;
+    return(typeREF);
+}
+
+Weapon::~Weapon()
+{
+    std::cout << "Weapon deconstructed" << std::endl; 
+}

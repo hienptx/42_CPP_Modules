@@ -13,35 +13,18 @@
 #ifndef HUMAN_H
 #define HUMAN_H
 
-#include <iostream>
-#include <string>
 #include "Weapon.hpp"
 
 class HumanA
 {
-    public:
-        std::string name;
-        std::string Weapon;
-        HumanA()
-        {
+    private:
+        std::string _Aname;
+        Weapon& _Aweapon;
 
-        }
-        void attack()
-        {
-            std::cout << name << "attacks with their"  << Weapon << std::endl;
-        }
-};
-
-class HumanB
-{
     public:
-        std::string name;
-        std::string Weapon;
-        HumanB(){};
-        void attack()
-        {
-            std::cout << name << "attacks with their"  << Weapon << std::endl;
-        }
+        HumanA(std::string name, Weapon& weapon);
+        void attack();
+        ~HumanA();
 };
 
 #endif
