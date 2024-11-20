@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .Dstore
 
 .vscode
@@ -5,3 +6,9 @@
 theory.cpp
 
 *.log
+=======
+README.md
+.vscode
+example.txt
+ptr_to_memfunctions.cpp
+>>>>>>> cpp01/main
