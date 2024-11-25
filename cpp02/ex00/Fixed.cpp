@@ -23,18 +23,20 @@ Fixed &Fixed::operator=(Fixed& copy)
     return (*this);
 }
 
+// getter
 int Fixed::getRawBits(void) const 
 {
     std::cout << "getRawBits member function called" << std::endl;
     return(_val);
 }
 
+// setter function
 void Fixed::setRawBits(int const raw) {
     _val = raw;
 }
 
 // deconstructor
-Fixed::~Fixed() 
+Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;
 }

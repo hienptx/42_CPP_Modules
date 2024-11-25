@@ -5,7 +5,11 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <iomanip> 
 
+// n << _fracBits = n * 2^_fracBits
+// is a bitwise operation used to scale an integer into a fixed-point format.
+// <<: Bitwise Shift Left
 class Fixed
 {
     private:
@@ -36,5 +40,7 @@ class Fixed
 
         int toInt(void) const;
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif
