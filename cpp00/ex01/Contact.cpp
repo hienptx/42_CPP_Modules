@@ -6,11 +6,31 @@
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:15:44 by hipham            #+#    #+#             */
-/*   Updated: 2024/11/12 19:15:47 by hipham           ###   ########.fr       */
+/*   Updated: 2024/11/26 19:30:10 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+std::string Contact::getFirstName() {
+    return (first_name);
+};
+
+std::string Contact::getLastName() {
+    return (last_name);
+}
+
+std::string Contact::getNickName() {
+    return (nick_name);
+}
+
+std::string Contact::getPhoneNumber() {
+    return (phone_number);
+}
+
+std::string Contact::getDarkestSecret() {
+    return (darkest_secret);
+};
 
 bool is_empty_string(std::string str) {
 
@@ -89,19 +109,11 @@ std::string	get_first_name(void) {
     return (first_name);
 }
 
-void PhoneBook::setContact(size_t idx) {
+void Contact::setInfo() {
+    first_name = get_first_name();
+    last_name = get_last_name();
+    nick_name = get_nick_name();
+    phone_number = get_phone_number();
+    darkest_secret = get_darkest_secret();
 
-    if (idx == 8)
-        idx = 0;
-    person[idx].first_name = get_first_name();
-    person[idx].last_name = get_last_name();
-    person[idx].nick_name = get_nick_name();
-    person[idx].phone_number = get_phone_number();
-    person[idx].darkest_secret = get_darkest_secret();
-
-}
-
-Contact *PhoneBook::getContact() {
-    
-    return (person);
 }
