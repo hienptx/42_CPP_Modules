@@ -6,7 +6,7 @@
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:04:01 by hipham            #+#    #+#             */
-/*   Updated: 2024/11/12 19:06:29 by hipham           ###   ########.fr       */
+/*   Updated: 2024/11/27 16:31:09 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int main(void)
 {
-    Zombie *zombie;
+	Zombie *zombie;
 
-    zombie = newZombie("Yee");
-    zombie->announce();
-    delete (zombie);
-    randomChump("Boo");
+	zombie = newZombie("Yee");
+	zombie->announce();
+	delete (zombie);
+	randomChump("Boo");
 
-    return (0);
+	return (0);
 }

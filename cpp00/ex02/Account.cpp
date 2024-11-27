@@ -6,13 +6,16 @@
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:16:25 by hipham            #+#    #+#             */
-/*   Updated: 2024/11/26 19:40:36 by hipham           ###   ########.fr       */
+/*   Updated: 2024/11/27 19:30:05 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
 #include <ctime>
+
+// 	awk '{print $2}' 1.log OR cut -d' ' -f2 logfile.log to cut off the time_stamp
+// diff file.1 file.2
 
 const std::string GREEN = "\033[32m";
 
@@ -32,7 +35,7 @@ Account::Account(int initial_deposit)
 	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";created" << std::endl;
 }
 
-// Deconstructor
+// Destructor
 Account::~Account(void)
 {
 	_displayTimestamp();

@@ -6,7 +6,7 @@
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:36:17 by hipham            #+#    #+#             */
-/*   Updated: 2024/11/26 19:38:00 by hipham           ###   ########.fr       */
+/*   Updated: 2024/11/27 19:24:39 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,13 @@ void print_search(Contact *person, size_t idx) {
 	}
 	std::cout << "Please enter valid index to search" << std::endl;
 	std::getline(std::cin, input);
+	if (input == "\0")
+		return ;
+	for (char &c : input)
+	{
+		if (!isdigit(c))
+			return ;
+	}
 	valid = std::stoi(input);
 	if (0 < valid  && valid <= (int)idx)
 		print_contact(person, valid - 1);
@@ -88,6 +95,8 @@ int	main(void) {
 		else if (input.compare("SEARCH") == 0)
 			print_search(phonebook.getContact(), index);
 		else if (input.compare("EXIT") == 0)
+			break ;
+		else if (std::cin.eof())
 			break ;
 		else
 			continue ;
