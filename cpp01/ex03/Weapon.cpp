@@ -6,7 +6,7 @@
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:42:45 by hipham            #+#    #+#             */
-/*   Updated: 2024/11/14 16:42:47 by hipham           ###   ########.fr       */
+/*   Updated: 2024/11/28 13:54:54 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,20 @@
 
 Weapon::Weapon(std::string type): _type(type)
 {
-    std::cout << "Weapon constructed" << std::endl;
+	std::cout << "Weapon constructed" << std::endl;
 }
 
 void Weapon::setType(std::string newType)
 {
-    _type = newType;
+	_type = newType;
 }
 
-std::string Weapon::getType()
+const std::string& Weapon::getType()
 {
-    const std::string &typeREF = _type;
-    return(typeREF);
+	return (_type);
 }
 
 Weapon::~Weapon()
 {
-    std::cout << "Weapon deconstructed" << std::endl; 
+	std::cout << "Weapon destructed\n" << std::endl; 
 }

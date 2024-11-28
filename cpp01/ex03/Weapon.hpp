@@ -6,7 +6,7 @@
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:42:48 by hipham            #+#    #+#             */
-/*   Updated: 2024/11/14 17:45:16 by hipham           ###   ########.fr       */
+/*   Updated: 2024/11/28 13:45:14 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Weapon
     public:
         Weapon(std::string type);
         void setType(std::string newType);
-        std::string getType();
+        const std::string& getType();
         ~Weapon();
 };
 
