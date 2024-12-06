@@ -7,27 +7,27 @@
 
 /* Othordox Canonical Form */
 Fixed::Fixed():_val(0) { // constructor
-    std::cout << "Default constructor called" << std::endl;
+    // std::cout << "Default constructor called" << std::endl;
 }
 Fixed::Fixed(const Fixed &copy): _val(copy._val) { // copy constructor
-    std::cout << "Copy constructor called" << std::endl;
+    // std::cout << "Copy constructor called" << std::endl;
 }
 Fixed &Fixed::operator=(const Fixed& copy) { //assigment, deep copy
-    std::cout << "Copy assignment operator called" << std::endl;
+    // std::cout << "Copy assignment operator called" << std::endl;
     if (this != &copy)
         _val = copy._val;
     return (*this);
 }
 Fixed::~Fixed() { // deconstructor
-    std::cout << "Destructor called" << std::endl;
+    // std::cout << "Destructor called" << std::endl;
 }
 
 // constructors of fixed point value
 Fixed::Fixed(const int val): _val(val << _fracBits) { // int to fp
-    std::cout << "Int constructor called" << std::endl;
+    // std::cout << "Int constructor called" << std::endl;
 } 
 Fixed::Fixed(const float val): _val(roundf(val * (1 << _fracBits))) { // float to fp
-    std::cout << "Float constructor called" << std::endl;
+    // std::cout << "Float constructor called" << std::endl;
 }
 
 // conversion
