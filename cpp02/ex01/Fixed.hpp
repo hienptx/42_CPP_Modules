@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/09 10:16:24 by hipham            #+#    #+#             */
+/*   Updated: 2024/12/09 10:17:07 by hipham           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef Fixed_H
 #define Fixed_H
@@ -12,33 +23,32 @@
 // <<: Bitwise Shift Left
 class Fixed
 {
-    private:
-        int _val;
-        //
-        static const int8_t _fracBits = 8;
+	private:
+		int _val;
+		//
+		static const int8_t _fracBits = 8;
 
-    public:
-        // defaut constructor
-        Fixed();
-        // Int constructor -> Parameterize constructor
-        Fixed(const int val);
-        // copy constructor
-        Fixed(const float val);
-        // copy constructor
-        Fixed(const Fixed &copy);
-        // assignment operator overload, deep copying
-        Fixed& operator = (const Fixed& copy);
-        // deconstructor
-        ~Fixed();
+	public:
+		// defaut constructor
+		Fixed();
+		// Int constructor -> Parameterize constructor
+		Fixed(const int val);
+		// copy constructor
+		Fixed(const float val);
+		// copy constructor
+		Fixed(const Fixed &copy);
+		// assignment operator overload, deep copying
+		Fixed& operator = (const Fixed& copy);
+		// deconstructor
+		~Fixed();
 
-        //get _val member function
-        int getRawBits(void) const;
-        //set _val member function
-        void setRawBits(int const raw);
-
-        float toFloat(void) const;
-
-        int toInt(void) const;
+		//get _val member function
+		int getRawBits(void) const;
+		//set _val member function
+		void setRawBits(int const raw);
+	
+		float toFloat(void) const;
+		int toInt(void) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed);

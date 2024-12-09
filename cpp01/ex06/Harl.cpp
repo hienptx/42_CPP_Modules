@@ -6,7 +6,7 @@
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:16:14 by hipham            #+#    #+#             */
-/*   Updated: 2024/11/28 15:23:19 by hipham           ###   ########.fr       */
+/*   Updated: 2024/11/28 17:22:43 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,24 +51,17 @@ void Harl::complain(LogLevel level)
 		&Harl::warning,
 		&Harl::error
 	};
+	int i = level;
 	switch (level)
 	{
 		case DEBUG:
-			for(size_t i = 0; i < 4; i++)
-				(this->*complainPTR[i])();
-			break;
+			(this->*complainPTR[i++])();
 		case INFO:
-			for(size_t i = 1; i < 4; i++)
-				(this->*complainPTR[i])();
-			break;
+			(this->*complainPTR[i++])();
 		case WARNING:
-			for(size_t i = 2; i < 4; i++)
-				(this->*complainPTR[i])();
-			break;
+			(this->*complainPTR[i++])();
 		case ERROR:
-			for(size_t i = 3; i < 4; i++)
-				(this->*complainPTR[i])();
-			break;
+			(this->*complainPTR[i])();
 		default:
 			break;
 	}

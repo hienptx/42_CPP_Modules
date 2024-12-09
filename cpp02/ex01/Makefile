@@ -1,10 +1,10 @@
-NAME = a.out
+NAME = fixedpoint
 
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++17
 
-SRCS = main.cpp Fixed.cpp Conversion.cpp
+SRCS = main.cpp Fixed.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
