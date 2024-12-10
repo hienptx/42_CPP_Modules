@@ -6,13 +6,18 @@
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:55:11 by hipham            #+#    #+#             */
-/*   Updated: 2024/12/09 15:37:03 by hipham           ###   ########.fr       */
+/*   Updated: 2024/12/10 14:17:46 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name): _Name(name) {
+// Default Constructor
+ClapTrap::ClapTrap(): _Name("Default"), _HitPoints(80), _EnergyPoints(100), _AttackDamage(30){
+	std::cout << "ClapTrap constructor called" << std::endl;
+}
+// Parameterized Constructor
+ClapTrap::ClapTrap(std::string name): _Name(name), _HitPoints(80), _EnergyPoints(100), _AttackDamage(30){
 	std::cout << "ClapTrap constructor called" << std::endl;
 }
 
@@ -68,7 +73,6 @@ void ClapTrap::attack(const std::string& target) {
 	else std::cout << "Not enough EnergyPoints or HitPoints to attack " << std::endl;
 }
 
-
 void ClapTrap::takeDamage(unsigned int amount) {
 	if (_HitPoints < amount) {
 		std::cout << std::endl;
@@ -83,6 +87,8 @@ void ClapTrap::takeDamage(unsigned int amount) {
 
 // When ClapTrap repairs itself, it gets <amount> hit points back
 void ClapTrap::beRepaired(unsigned int amount) {
+	std::cout << _Name << "is healing" << std::endl;
+	std::cout << _Name << " get " << amount << " Hitpoints back" << std::endl;
 	_EnergyPoints--;
 	_HitPoints = _HitPoints + amount;
 }

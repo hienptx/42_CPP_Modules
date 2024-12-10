@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/10 11:33:20 by hipham            #+#    #+#             */
+/*   Updated: 2024/12/10 12:42:54 by hipham           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SCAVTRAP_H
 #define SCAVTRAP_H
 
@@ -5,16 +17,11 @@
 
 // In public inheritance private accessifier is not inherited
 class ScavTrap : public ClapTrap {
-    pritvate:
-        std::string _Name;
-		unsigned int _HitPoints = 100;
-		unsigned int _EnergyPoints = 50;
-		unsigned int _AttackDamage = 20;
-    public:
-        ScavTrap(std::string name);
-        ~ScavTrap();
-        void attack(const std::string &target);
-        void guardGate();
+	public:
+		ScavTrap(std::string name);
+		~ScavTrap();
+		void attack(const std::string &target);
+		void guardGate();
 };
 
 #endif 
