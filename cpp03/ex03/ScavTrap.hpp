@@ -16,13 +16,13 @@
 #include "ClapTrap.hpp"
 
 // In public inheritance private accessifier is not inherited
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);
 		~ScavTrap();
 
-		void attack(const std::string &target);
+		virtual void attack(const std::string &target);
 		void guardGate();
 };
 

@@ -65,7 +65,10 @@ void ClapTrap::attack(const std::string& target) {
 		std::cout << _Name << " attacks " << target;
 		_EnergyPoints--;
 	}
-	else std::cout << "Not enough EnergyPoints or HitPoints to attack " << std::endl;
+	else if (_HitPoints <= 0) 
+		std::cout << _Name << " does not have enough HitPoints to attack" << std::endl;
+	else if (_EnergyPoints <= 0)
+		std::cout << _Name << " does not have enough EnergyPoints to attack" << std::endl;
 }
 
 
@@ -83,6 +86,12 @@ void ClapTrap::takeDamage(unsigned int amount) {
 
 // When ClapTrap repairs itself, it gets <amount> hit points back
 void ClapTrap::beRepaired(unsigned int amount) {
-	_EnergyPoints--;
-	_HitPoints = _HitPoints + amount;
+	if (_EnergyPoints <= 0)
+		std::cout << _Name << " does not have enough EnergyPoints to HEAL" << std::endl;
+	else {
+		std::cout << _Name << "is healing" << std::endl;
+		std::cout << _Name << " get " << amount << " Hitpoints back" << std::endl;
+		_EnergyPoints--;
+		_HitPoints = _HitPoints + amount;
+	}
 }

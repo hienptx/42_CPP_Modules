@@ -30,9 +30,13 @@ int main(void)
 
 	scavTrap.attack(scavTrap.getName());
 	clapTrap.takeDamage(scavTrap.getAttackDamage());
+	scavTrap.guardGate();
 	std::cout << std::endl;
 	
 	std::cout << scavTrap.getName() << "'s HitPoints = " << scavTrap.getHitPoints() << std::endl;
-	std::cout << clapTrap.getName()<< "'s EnergyPointrs = " << clapTrap.getEnergyPoints() << std::endl;
+	std::cout << scavTrap.getName() << "'s EnergyPoints = " << scavTrap.getEnergyPoints() << "\n" << std::endl;
+
+	std::cout << clapTrap.getName()<< "'s HitPoints = " << clapTrap.getHitPoints() << std::endl;
+	std::cout << clapTrap.getName()<< "'s EnergyPoints = " << clapTrap.getEnergyPoints() << std::endl;
 	return (0);
 }

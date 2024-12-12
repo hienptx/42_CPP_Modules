@@ -13,11 +13,11 @@
 #include "ClapTrap.hpp"
 
 // Default Constructor
-ClapTrap::ClapTrap(): _Name("Default"), _HitPoints(100), _EnergyPoints(100), _AttackDamage(30){
+ClapTrap::ClapTrap(): _Name("Default"), _HitPoints(100), _EnergyPoints(100), _AttackDamage(40){
 	std::cout << "ClapTrap constructor called" << std::endl;
 }
 // Parameterized Constructor
-ClapTrap::ClapTrap(std::string name): _Name(name), _HitPoints(80), _EnergyPoints(100), _AttackDamage(30){
+ClapTrap::ClapTrap(std::string name): _Name(name), _HitPoints(100), _EnergyPoints(100), _AttackDamage(40){
 	std::cout << "ClapTrap constructor called" << std::endl;
 }
 // Copy constructor
@@ -68,12 +68,13 @@ unsigned int ClapTrap::getEnergyPoints() {
 void ClapTrap::attack(const std::string& target) {
 	if (_HitPoints > 0 && _EnergyPoints > 0) {
 		std::cout << _Name << " attacks " << target;
+		std::cout << " caused " << _AttackDamage << " damage" << std::endl;
 		_EnergyPoints--;
 	}
 	else if (_HitPoints <= 0) 
-		std::cout << _Name << " does not have enough HitPoints to attack" << std::endl;
+		std::cout << _Name << " does not have HitPoints to attack " << target << std::endl;
 	else if (_EnergyPoints <= 0)
-		std::cout << _Name << " does not have enough EnergyPoints to attack" << std::endl;
+		std::cout << _Name << " does not have EnergyPoints to attack " << target << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
@@ -81,9 +82,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		std::cout << std::endl;
 		std::cout << _Name << " cannot take more Damage" << std::endl;
 	}
-	else
-	{
-		std::cout << " causing " << amount << " points of damage" << std::endl;
+	else {
 		_HitPoints = _HitPoints - amount;
 	}
 }
@@ -93,7 +92,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	if (_EnergyPoints <= 0)
 		std::cout << _Name << " does not have enough EnergyPoints to HEAL" << std::endl;
 	else {
-		std::cout << _Name << "is healing" << std::endl;
+		std::cout << _Name << " is healing" << std::endl;
 		std::cout << _Name << " get " << amount << " Hitpoints back" << std::endl;
 		_EnergyPoints--;
 		_HitPoints = _HitPoints + amount;
