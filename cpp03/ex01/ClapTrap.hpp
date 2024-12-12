@@ -6,7 +6,7 @@
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:55:14 by hipham            #+#    #+#             */
-/*   Updated: 2024/12/10 14:11:07 by hipham           ###   ########.fr       */
+/*   Updated: 2024/12/12 11:42:27 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ class ClapTrap {
 
 		// Setter
 		void setName(const std::string name);
+		void setAttackDamage(const unsigned int amount);
+		void setEnergyPoints(const unsigned int amount);
 		
 		// // Getter
 		std::string getName();
@@ -39,14 +41,12 @@ class ClapTrap {
 		unsigned int getHitPoints();
 		unsigned int getEnergyPoints();
 
-		// Virtual functions are member functions whose behavior can be overridden in derived classes.
 		virtual void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 };
 
 #endif
-
 
 /*----------------NOTE--------------------*/
 
