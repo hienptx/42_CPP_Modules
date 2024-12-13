@@ -6,7 +6,7 @@
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:55:17 by hipham            #+#    #+#             */
-/*   Updated: 2024/12/12 15:41:10 by hipham           ###   ########.fr       */
+/*   Updated: 2024/12/13 14:17:53 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,66 +91,3 @@ int main(void)
 	std::cout << std::endl; 
 	return (0);
 }
-
-// int main(void)
-// {
-// 	ClapTrap clapTrap("Optimus");
-// 	ScavTrap scavTrap("Bublebee");
-// 	FragTrap fragTrap("Autobots");
-// 	DiamondTrap diamondTrap("Hybrid");
-
-// 	std::cout << std::endl;
-// 	std::cout << clapTrap.getName() << "'s AttackDamage = " << clapTrap.getAttackDamage() << std::endl;
-// 	std::cout << clapTrap.getName()<< "'s HitPoints = " << clapTrap.getHitPoints() << std::endl;
-// 	std::cout << clapTrap.getName()<< "'s EnergyPoints = " << clapTrap.getEnergyPoints() << "\n" << std::endl;
-
-// 	std::cout << fragTrap.getName() << "'s AttackDamage = " << fragTrap.getAttackDamage() << std::endl;
-// 	std::cout << fragTrap.getName() << "'s HitPoints = " << fragTrap.getHitPoints() << std::endl;
-// 	std::cout << fragTrap.getName() << "'s EnergyPoints = " << fragTrap.getEnergyPoints() << "\n" << std::endl;
-	
-// 	std::cout << scavTrap.getName() << "'s AttackDamage = " << scavTrap.getAttackDamage() << std::endl;
-// 	std::cout << scavTrap.getName() << "'s HitPoints = " << scavTrap.getHitPoints() << std::endl;
-// 	std::cout << scavTrap.getName() << "'s EnergyPoints = " << scavTrap.getEnergyPoints() << "\n" << std::endl;
-	
-// 	std::cout << diamondTrap.getName() << "'s AttackDamage = " << diamondTrap.getAttackDamage() << std::endl;
-// 	std::cout << diamondTrap.getName() << "'s HitPoints = " << diamondTrap.getHitPoints() << std::endl;
-// 	std::cout << diamondTrap.getName() << "'s EnergyPoints = " << diamondTrap.getEnergyPoints() << "\n" << std::endl;
-	
-// 	scavTrap.attack(fragTrap.getName());
-// 	fragTrap.takeDamage(scavTrap.getAttackDamage());
-
-// 	clapTrap.attack(fragTrap.getName());
-// 	clapTrap.attack(fragTrap.getName());
-// 	fragTrap.takeDamage(clapTrap.getAttackDamage());
-// 	fragTrap.takeDamage(clapTrap.getAttackDamage());
-// 	// fragTrap.beRepaired(clapTrap.getAttackDamage());
-// 	std::cout << std::endl;
-
-// 	scavTrap.attack(clapTrap.getName());
-// 	clapTrap.takeDamage(scavTrap.getAttackDamage());
-// 	scavTrap.guardGate();
-// 	std::cout << std::endl;
-	
-// 	fragTrap.attack(scavTrap.getName());
-// 	scavTrap.takeDamage(fragTrap.getAttackDamage());
-// 	fragTrap.highFivesGuys();
-// 	std::cout << std::endl;
-	
-// 	diamondTrap.attack(clapTrap.getName());
-// 	clapTrap.takeDamage(diamondTrap.getAttackDamage());
-// 	diamondTrap.whoAmI();
-// 	std::cout << std::endl;
-	
-// 	std::cout << fragTrap.getName() << "'s HitPoints = " << fragTrap.getHitPoints() << std::endl;
-// 	std::cout << fragTrap.getName() << "'s EnergyPoints = " << fragTrap.getEnergyPoints() << "\n" << std::endl;
-	
-// 	std::cout << scavTrap.getName() << "'s HitPoints = " << scavTrap.getHitPoints() << std::endl;
-// 	std::cout << scavTrap.getName() << "'s EnergyPoints = " << scavTrap.getEnergyPoints() << "\n" << std::endl;
-
-// 	std::cout << clapTrap.getName()<< "'s HitPoints = " << clapTrap.getHitPoints() << std::endl;
-// 	std::cout << clapTrap.getName()<< "'s EnergyPoints = " << clapTrap.getEnergyPoints() << "\n" << std::endl;
-	
-// 	std::cout << diamondTrap.getName()<< "'s HitPoints = " << diamondTrap.getHitPoints() << std::endl;
-// 	std::cout << diamondTrap.getName()<< "'s EnergyPoints = " << diamondTrap.getEnergyPoints() << "\n" << std::endl;
-// 	return (0);
-// }
