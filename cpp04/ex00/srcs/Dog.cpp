@@ -6,7 +6,7 @@
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 14:37:35 by hipham            #+#    #+#             */
-/*   Updated: 2024/12/13 14:59:01 by hipham           ###   ########.fr       */
+/*   Updated: 2024/12/15 17:13:23 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog() : Animal()
 	std::cout << "Dog Constructor Called" << std::endl;
 }
 
-Dog::Dog(const Dog &other)
+Dog::Dog(const Dog &other) : Animal()
 {
 	std::cout << "Dog Copy Constructor Called" << std::endl;
 	type = other.type;

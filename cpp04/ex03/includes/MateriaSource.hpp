@@ -3,34 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mleibeng <mleibeng@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/13 02:51:43 by mleibeng          #+#    #+#             */
-/*   Updated: 2024/07/04 01:24:42 by mleibeng         ###   ########.fr       */
+/*   Created: 2024/12/17 11:14:17 by hipham            #+#    #+#             */
+/*   Updated: 2024/12/17 13:48:23 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#ifndef MATERIASOURCE_H
-#define MATERIASOURCE_H
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
 #include "IMateriaSource.hpp"
-#include "AMateria.hpp"
 
 class MateriaSource : public IMateriaSource
 {
-	protected:
-	AMateria	*learned[4];
-	int			inven_items;
-
-	public:
-	MateriaSource();
-	MateriaSource(const MateriaSource& copy);
-	MateriaSource &operator=(const MateriaSource &copy);
-	~MateriaSource();
-
-	void learnMateria(AMateria* m);
-	AMateria* createMateria(std::string const & type);
+    protected:
+        AMateria* learnedMateria[4];
+    public:
+        MateriaSource();
+        ~MateriaSource();
+        MateriaSource(const MateriaSource& other);
+        MateriaSource &operator=(const MateriaSource& other);
+        
+        void learnMateria(AMateria*) override;
+        AMateria* createMateria(std::string const &type) override;       
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 13:58:47 by hipham            #+#    #+#             */
-/*   Updated: 2024/12/13 14:58:45 by hipham           ###   ########.fr       */
+/*   Updated: 2024/12/16 12:23:17 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ std::string Animal::getType() const
 
 void Animal::makeSound() const
 {
-	std::cout << "mallllll" << std::endl;
+	std::cout << "Animal makes no sound" << std::endl;
 }

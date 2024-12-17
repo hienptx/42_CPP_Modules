@@ -3,30 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mleibeng <mleibeng@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/13 01:59:25 by mleibeng          #+#    #+#             */
-/*   Updated: 2024/07/04 00:04:32 by mleibeng         ###   ########.fr       */
+/*   Created: 2024/12/16 14:48:00 by hipham            #+#    #+#             */
+/*   Updated: 2024/12/17 14:40:37 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#ifndef ICE_H
-#define ICE_H
+#ifndef ICE_HPP
+#define ICE_HPP
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 class Ice : public AMateria
 {
-	public:
-	Ice();
-	Ice(const Ice& copy);
-	Ice &operator=(const Ice &copy);
-	virtual ~Ice();
-
-	std::string const &getType() const;
-	Ice *clone() const;
-	void use(ICharacter &target);
+    public:
+        Ice();
+        ~Ice();
+        Ice(const Ice &other);
+        Ice &operator=(const Ice &other);
+        AMateria *clone() const override;
+        void use(ICharacter& target) override;
 };
 
 #endif

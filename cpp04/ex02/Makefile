@@ -21,7 +21,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++17 -I./includes
 
-SRCS = Animal.cpp Cat.cpp Dog.cpp Brain.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
+SRCS = Animal.cpp Cat.cpp Dog.cpp Brain.cpp WrongAnimal.cpp WrongCat.cpp main.cpp testAbstractClass.cpp
 OBJS = $(addprefix $(OBJS_PATH)/, $(SRCS:.cpp=.o))
 
 PURPLE = \033[0;35m

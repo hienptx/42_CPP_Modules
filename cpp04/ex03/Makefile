@@ -12,7 +12,7 @@
 # target being generated (typically the object file).
 
 
-NAME = polymorphism
+NAME = interfaces
 
 SRCS_PATH = ./srcs
 OBJS_PATH = ./objs
@@ -21,7 +21,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++17 -I./includes
 
-SRCS = Animal.cpp Cat.cpp Dog.cpp Brain.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 OBJS = $(addprefix $(OBJS_PATH)/, $(SRCS:.cpp=.o))
 
 PURPLE = \033[0;35m

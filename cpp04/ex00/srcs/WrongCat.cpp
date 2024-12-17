@@ -6,7 +6,7 @@
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:11:19 by hipham            #+#    #+#             */
-/*   Updated: 2024/12/13 15:13:49 by hipham           ###   ########.fr       */
+/*   Updated: 2024/12/15 13:29:43 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ WrongCat::WrongCat() : WrongAnimal()
 	std::cout << "WrongCat Constructor Called" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &other)
+WrongCat::WrongCat(const WrongCat &other) : WrongAnimal()
 {
 	std::cout << "WrongCat Copy Constructor Called" << std::endl;
 	type = other.type;

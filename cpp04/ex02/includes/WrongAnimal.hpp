@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mleibeng <mleibeng@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/13 01:52:19 by mleibeng          #+#    #+#             */
-/*   Updated: 2024/07/04 00:48:35 by mleibeng         ###   ########.fr       */
+/*   Created: 2024/12/13 15:08:10 by hipham            #+#    #+#             */
+/*   Updated: 2024/12/13 15:12:42 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#ifndef AMATERIA_H
-#define AMATERIA_H
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #include <iostream>
 #include <string>
 
-class ICharacter;
-
-class AMateria
-{
+class WrongAnimal {
 	protected:
-	std::string type;
-
+		std::string type;
 	public:
-	AMateria(std::string const &type);
-	virtual ~AMateria();
-
-	std::string const &getType() const;
-	virtual AMateria *clone() const = 0;
-	virtual void use(ICharacter &target);
+		WrongAnimal();
+		WrongAnimal(const WrongAnimal &other);
+		WrongAnimal &operator=(WrongAnimal &oter);
+		virtual ~WrongAnimal();
+	public:
+		std::string getType() const;
+		virtual void makeSound() const;
 };
 
 #endif

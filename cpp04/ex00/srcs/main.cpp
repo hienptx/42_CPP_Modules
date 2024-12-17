@@ -6,7 +6,7 @@
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 14:13:36 by hipham            #+#    #+#             */
-/*   Updated: 2024/12/13 15:18:26 by hipham           ###   ########.fr       */
+/*   Updated: 2024/12/16 12:21:23 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,37 @@
 
 int main()
 {
+	std::cout << "\033[35m[Test Animal Class]\033[0m" << std::endl;
 	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	const WrongAnimal* beta = new WrongAnimal();
-	const WrongAnimal* x = new WrongCat(); 
-	std::cout << std::endl;
-
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << x->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	x->makeSound();
-	j->makeSound();
+	std::cout << meta->getType() << " " << std::endl;
 	meta->makeSound();
+	const Animal a;
+	std::cout << a.getType() << " " << std::endl;
+	a.makeSound();
+	
+	std::cout << "\033[35m[Test Dog Class]\033[0m" << std::endl;
+	const Animal *j = new Dog();
+	std::cout << j->getType() << " " << std::endl;
+	j->makeSound();
+	
+	std::cout << "\033[35m[Test Cat Class]\033[0m" << std::endl;
+	const Animal* i = new Cat();
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	
+	std::cout << "\033[35m[Test WrongAnimal Class]\033[0m" << std::endl;
+	const WrongAnimal* beta = new WrongAnimal();
+	std::cout << beta->getType() << " " << std::endl;
 	beta->makeSound();
-	std::cout << std::endl;
 
+	std::cout << "\033[35m[Test WrongCat Class]\033[0m" << std::endl;
+	const WrongAnimal* x = new WrongCat(); 
+	std::cout << x->getType() << " " << std::endl;
+	x->makeSound();
+
+	std::cout << std::endl;
 	delete meta;
+	delete beta;
 	delete j;
 	delete i;
 	delete x;

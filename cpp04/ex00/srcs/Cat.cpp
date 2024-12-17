@@ -6,7 +6,7 @@
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 14:20:00 by hipham            #+#    #+#             */
-/*   Updated: 2024/12/13 15:11:30 by hipham           ###   ########.fr       */
+/*   Updated: 2024/12/15 13:29:12 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat() : Animal()
 	std::cout << "Cat Constructor Called" << std::endl;
 }
 
-Cat::Cat(const Cat &other)
+Cat::Cat(const Cat &other) : Animal()
 {
 	std::cout << "Cat Copy Constructor Called" << std::endl;
 	type = other.type;

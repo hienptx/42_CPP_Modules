@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   testAbstractClass.cpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/13 14:35:59 by hipham            #+#    #+#             */
-/*   Updated: 2024/12/15 17:53:29 by hipham           ###   ########.fr       */
+/*   Created: 2024/12/16 11:57:43 by hipham            #+#    #+#             */
+/*   Updated: 2024/12/16 12:12:19 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
-
 #include "Animal.hpp"
-#include "Brain.hpp"
 
-class Dog : public Animal
+void dosomething(Animal &animal) 
 {
-	private:
-		Brain *_Brain;
-	public:
-		Dog();
-		Dog(const Dog &other);
-		Dog &operator=(const Dog &other);
-		~Dog();
-	
-	public:
-		void makeSound() const;
-		void setBrainIdeas(std::string *ideas, int n);
-		std::string *getBrainIdeas();
-};
+	std::cout << "Is running" << std::endl;
+	animal.makeSound();
+}
 
-#endif
+Animal& a(Animal &animal)
+{
+	animal.makeSound();
+	return(animal);
+}
+
+// Animal b(void) // -> Throw Error
+// {
+// 	std::cout << "Just a Test" << std::endl;
+// }
+
+// void c(Animal d) // -> Throw Error
+// {
+// 	std::cout << "Just a Test" << std::endl;
+// 	d.makeSound();
+// }

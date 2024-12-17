@@ -6,7 +6,7 @@
 /*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 14:12:54 by hipham            #+#    #+#             */
-/*   Updated: 2024/12/13 14:58:31 by hipham           ###   ########.fr       */
+/*   Updated: 2024/12/16 12:23:25 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Animal {
 	public:
 		Animal();
 		Animal(const Animal &other);
-		Animal &operator=(Animal &oter);
+		Animal &operator=(Animal &other);
 		virtual ~Animal();
 	public:
 		std::string getType() const;

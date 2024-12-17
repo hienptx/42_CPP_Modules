@@ -3,32 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mleibeng <mleibeng@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hipham <hipham@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/13 01:59:42 by mleibeng          #+#    #+#             */
-/*   Updated: 2024/07/04 00:04:35 by mleibeng         ###   ########.fr       */
+/*   Created: 2024/12/16 14:17:25 by hipham            #+#    #+#             */
+/*   Updated: 2024/12/16 23:40:50 by hipham           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#ifndef CURE_H
-#define CURE_H
+#ifndef CURE_HPP
+#define CURE_HPP
 
 #include "AMateria.hpp"
-
-class ICharacter;
+#include "ICharacter.hpp"
 
 class Cure : public AMateria
 {
-	public:
-	Cure();
-	Cure(const Cure& copy);
-	Cure &operator=(const Cure &copy);
-	virtual ~Cure();
-
-	std::string const &getType() const;
-	Cure *clone() const;
-	void use(ICharacter &target);
+    public:
+        Cure();
+        ~Cure();
+        Cure(const Cure &other);
+        Cure &operator=(const Cure &other);
+        AMateria *clone() const override;
+        void use(ICharacter& target) override;
 };
 
 #endif
